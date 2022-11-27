@@ -1,0 +1,11 @@
+services:
+  newsapp:
+    container_name: newsapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./newsapp:/work/newsapp
+    command: sh -c "cd newsapp && PORT=3000 npm start"
+    ports:
+      - 3000:3000
